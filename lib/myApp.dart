@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stateful_widget/stateless_mediaquery_wrap_layoutbuilder_widgetbuilder.dart';
 
+import 'Aspect_ratio_Expanded_FractionallySizedBox.dart';
 import 'Home.dart';
 
 
@@ -24,7 +26,7 @@ class myApp extends StatelessWidget {
             foregroundColor: Colors.white))),
       title:"Songit Boss",
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: AspectRatioExample(),
     );
   }
 }

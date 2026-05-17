@@ -1,8 +1,12 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:stateful_widget/stateless_mediaquery_wrap_layoutbuilder_widgetbuilder.dart';
 
 import 'Aspect_ratio_Expanded_FractionallySizedBox.dart';
 import 'Home.dart';
+import 'Sizer_ResponsiveBuilder_DevicePreview.dart';
+import 'life_cycle.dart';
 
 
 
@@ -11,22 +15,30 @@ class myApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.cyanAccent,
-        appBarTheme: AppBarTheme(
-          color: Colors.cyanAccent,
+    return  Sizer(
+      builder: (context,orientation,screenType) {
+        return MaterialApp(
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
 
-          centerTitle: true,
-        ),
-        scaffoldBackgroundColor: Colors.white,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.greenAccent,
-            foregroundColor: Colors.white))),
-      title:"Songit Boss",
-      debugShowCheckedModeBanner: false,
-      home: AspectRatioExample(),
+          theme: ThemeData(
+            primaryColor: Colors.cyanAccent,
+            appBarTheme: AppBarTheme(
+              color: Colors.cyanAccent,
+
+              centerTitle: true,
+            ),
+            scaffoldBackgroundColor: Colors.white,
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.greenAccent,
+                foregroundColor: Colors.white))),
+          title:"Songit Boss",
+          debugShowCheckedModeBanner: false,
+          home: LifeCycleExample(),
+        );
+      }
     );
   }
 }

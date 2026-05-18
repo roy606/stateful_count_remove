@@ -6,6 +6,7 @@ import 'package:stateful_widget/stateless_mediaquery_wrap_layoutbuilder_widgetbu
 import 'Aspect_ratio_Expanded_FractionallySizedBox.dart';
 import 'Home.dart';
 import 'Sizer_ResponsiveBuilder_DevicePreview.dart';
+import 'calculator.dart';
 import 'life_cycle.dart';
 
 
@@ -36,7 +37,7 @@ class myApp extends StatelessWidget {
                 foregroundColor: Colors.white))),
           title:"Songit Boss",
           debugShowCheckedModeBanner: false,
-          home: LifeCycleExample(),
+          home: Calculatorapp (),
         );
       }
     );
